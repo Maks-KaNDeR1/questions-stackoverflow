@@ -1,0 +1,15 @@
+{
+  "files": {
+    "main.css": "/questions-stackoverflow/static/css/main.ef040e0c.css",
+    "main.js": "/questions-stackoverflow/static/js/main.d575bfd4.js",
+    "static/js/787.310de91d.chunk.js": "/questions-stackoverflow/static/js/787.310de91d.chunk.js",
+    "index.html": "/questions-stackoverflow/index.html",
+    "main.ef040e0c.css.map": "/questions-stackoverflow/static/css/main.ef040e0c.css.map",
+    "main.d575bfd4.js.map": "/questions-stackoverflow/static/js/main.d575bfd4.js.map",
+    "787.310de91d.chunk.js.map": "/questions-stackoverflow/static/js/787.310de91d.chunk.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.ef040e0c.css",
+    "static/js/main.d575bfd4.js"
+  ]
+}
