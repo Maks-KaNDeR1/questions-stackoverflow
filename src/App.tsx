@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react';
+import React, { useCallback, useEffect, useState } from 'react';
 import './App.css';
 import { useAppDispatch, useAppSelector } from './utils/hook';
 import { LinearProgress } from '@mui/material';
@@ -27,14 +27,14 @@ function App() {
     dispatch(requestQuestions(fromdate, 1, page, searchValue))
   }, [page])
 
-  const onPageChanged = () => {
+  const onPageChanged = useCallback(() => {
     const enlargedCurrentPage = currentPage + 1
     dispatch(loadMoreQuestions(fromdate, enlargedCurrentPage, page, searchValue))
-  }
+  }, [currentPage, dispatch, fromdate, page, searchValue])
 
-  const searchClickHandler = () => {
+  const searchClickHandler = useCallback(() => {
     dispatch(requestQuestions(fromdate, 1, page, searchValue))
-  }
+  }, [dispatch, fromdate, page, searchValue])
 
 
   return (

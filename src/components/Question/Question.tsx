@@ -1,4 +1,4 @@
-import React, { CSSProperties, useRef, useState, useEffect } from 'react'
+import React, { CSSProperties, useRef, useState, useEffect, useCallback } from 'react'
 import { QuestionType } from '../../api/types'
 import { convertToDate } from '../../common/date/date'
 import styles from './Question.module.css'
@@ -12,7 +12,7 @@ const truncate = (str: any, n: number) => {
         return str.length > n ? str.substr(0, n - 1) + '...' : str
 }
 
-export const Question: React.FC<PropsType> = ({ question }) => {
+export const Question: React.FC<PropsType> = React.memo(({ question }) => {
     const {
         score,
         title,
@@ -29,7 +29,6 @@ export const Question: React.FC<PropsType> = ({ question }) => {
 
     const [dropDown, setDropDown] = useState(false)
     const ref = useRef<HTMLDivElement>(null);
-
 
 
     useEffect(() => {
@@ -50,19 +49,19 @@ export const Question: React.FC<PropsType> = ({ question }) => {
         setDropDown(prev => !prev)
     }
 
-    const onClickUpHandler = () => {
+    const onClickUpHandler = useCallback(() => {
         if (scoreUpDown < 1) {
             setScoreLocal(scoreLocal + 1)
             setScoreUpDown(scoreUpDown + 1)
         }
-    }
+    }, [scoreLocal, scoreUpDown])
 
-    const onClickDownHandler = () => {
+    const onClickDownHandler = useCallback(() => {
         if (scoreUpDown > -1) {
             setScoreLocal(scoreLocal - 1)
             setScoreUpDown(scoreUpDown - 1)
         }
-    }
+    }, [])
 
     return (
         <div>
@@ -99,7 +98,7 @@ export const Question: React.FC<PropsType> = ({ question }) => {
             }
         </div>
     )
-}
+})
 
 
 const isAnswered: CSSProperties = {

@@ -1,4 +1,4 @@
-import React, { ChangeEvent, KeyboardEvent, useState } from 'react'
+import React, { ChangeEvent, KeyboardEvent, useCallback, useState } from 'react'
 import styles from './Header.module.css'
 
 type PropsType = {
@@ -12,7 +12,7 @@ type PropsType = {
     setDateValue: (title: string) => void
 }
 
-export const Header: React.FC<PropsType> = (
+export const Header: React.FC<PropsType> = React.memo((
     {
         title,
         searchValue,
@@ -28,15 +28,15 @@ export const Header: React.FC<PropsType> = (
     const [openCLoseButton, setOpenCLoseButton] = useState(false)
 
 
-    const dateChangeHandler = (e: ChangeEvent<HTMLInputElement>) => {
+    const dateChangeHandler = useCallback((e: ChangeEvent<HTMLInputElement>) => {
         setDateValue(e.currentTarget.value)
         if (e) setOpenCLoseButton(true)
+    }, [setDateValue])
 
-    }
-    const searchValueChangeHandler = (e: ChangeEvent<HTMLInputElement>) => {
+    const searchValueChangeHandler = useCallback((e: ChangeEvent<HTMLInputElement>) => {
         setSearchValue(e.currentTarget.value)
         if (e) setOpenCLoseButton(true)
-    }
+    }, [setSearchValue])
 
     const onCLickHandler = () => {
         setOpenCLoseButton(false)
@@ -80,4 +80,4 @@ export const Header: React.FC<PropsType> = (
             </div>
         </span>
     )
-}
+})
