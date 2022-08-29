@@ -1,0 +1,62 @@
+.questionBlock {
+    /* margin-top: 30px; */
+    position: relative;
+    padding: 14px;
+
+    border: 1px solid rgb(61 59 59 / 37%);
+    border-radius: 5px;
+    box-shadow: 0px 0px 4px 0px rgb(0 0 0 / 50%);
+
+    .items {
+        display: flex;
+        justify-content: space-between;
+        padding-right: 40px;
+        cursor: pointer;
+    }
+
+    .scoreButton {
+        position: absolute;
+        /* display: flex; */
+        justify-content: center;
+        width: 10px;
+        top: 2px;
+        right: 12px;
+        font-size: 16px;
+
+        i {
+            cursor: pointer;
+            color: rgb(230, 230, 230);
+            transition: .5s;
+        }
+
+        :hover {
+            color: rgb(173, 173, 173);
+        }
+
+
+    }
+
+}
+
+:hover {
+    color: rgb(29, 60, 95);
+    background-position: right center;
+}
+
+.dropDownBlock {
+    transition: .5s;
+
+    padding: 14px;
+    border: 1px solid #44aeff;
+    border-top: none;
+    border-radius: 5px;
+    box-shadow: 0px 0px 4px 0px #44aeff(0 0 0 / 50%);
+
+    div {
+        padding: 3px;
+    }
+
+    b {
+        margin-left: 10px;
+    }
+}

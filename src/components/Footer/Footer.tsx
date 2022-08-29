@@ -2,7 +2,7 @@ import React, { useState } from 'react'
 import MenuItem from '@mui/material/MenuItem';
 import FormControl from '@mui/material/FormControl';
 import Select, { SelectChangeEvent } from '@mui/material/Select';
-import styles from './Footer.module.css'
+import './Footer.scss'
 import { QuestionType } from '../../api/types';
 
 
@@ -23,15 +23,15 @@ export const Footer: React.FC<PropsType> = React.memo(({ questions, loading, onP
     };
 
     return (
-        <footer className={styles.footer}>
+        <footer className={'footer'}>
 
             {
                 questions.length > 4 ?
-                    <div className={styles.footerBlock}>
+                    <div className={'footerBlock'}>
                         <div>
-                            <FormControl className={styles.formControl} >
+                            <FormControl className={'formControl'} >
                                 <Select
-                                    className={styles.select}
+                                    className={'select'}
                                     value={age}
                                     onChange={handleChange}
                                     displayEmpty
@@ -47,7 +47,7 @@ export const Footer: React.FC<PropsType> = React.memo(({ questions, loading, onP
                             </FormControl>
                         </div>
                         <div>
-                            <button className={styles.buttonLoad} onClick={onPageChanged}>
+                            <button className={'buttonLoad'} onClick={onPageChanged}>
                                 {loading && (
                                     <i
                                         className="fa fa-refresh fa-spin"

@@ -1,43 +1,43 @@
-
 .titleBlock {
-    font-size: 25px;
-  }
-  
-  .titleBlock input {
+  font-size: 25px;
+
+  input {
     outline: none;
     background-image: linear-gradient(to right, #afe8dfa8 0%, #8498db73 51%, #9eefe1b7 100%);
     /* font-size: 14px; */
     /* color: white; */
     box-shadow: 0 0 162px 0 rgba(0, 40, 120, .35);
-     border: 1px solid #33d9de;
+    border: 1px solid #33d9de;
   }
+
   .dateInput {
     position: absolute;
     font-size: 19px;
     margin-left: 10px;
     margin-top: 5px;
-    
+
   }
 
   .LowerLevel {
     display: flex;
     justify-content: center;
+
+    .searchInput {
+      padding: 10px 10px 14px 10px;
+      margin: 18px 10px 10px 10px;
+      font-size: 22px;
+      width: 250px;
+      height: 16px;
+    
+    }
   }
-  
-  .searchInput {
-    padding: 5px;
-    margin: 10px;
-    font-size: 22px;
-    width: 250px;
-    height: 16px;
-  
+  .buttonSearch {
+    border-radius: 5px;
+    padding: 0 15px;
+    margin: 16px 10px 10px 10px;
+
+
   }
 
-  .buttonSearch {
-    border-radius: 10px;
-    padding: 5px 15px;
-    margin: 10px;
-    
-  
-  }
-  
+
+}

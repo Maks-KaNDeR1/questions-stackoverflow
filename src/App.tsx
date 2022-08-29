@@ -1,5 +1,5 @@
 import React, { useCallback, useEffect, useState } from 'react';
-import './App.css';
+import './App.scss';
 import { useAppDispatch, useAppSelector } from './utils/hook';
 import { LinearProgress } from '@mui/material';
 import { ErrorSnackbar } from './components/ErrorSnackbar/ErrorSnackbar';

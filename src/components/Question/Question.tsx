@@ -1,7 +1,7 @@
 import React, { CSSProperties, useRef, useState, useEffect, useCallback } from 'react'
 import { QuestionType } from '../../api/types'
 import { convertToDate } from '../../common/date/date'
-import styles from './Question.module.css'
+import './Question.scss'
 
 type PropsType = {
     question: QuestionType
@@ -61,18 +61,18 @@ export const Question: React.FC<PropsType> = React.memo(({ question }) => {
             setScoreLocal(scoreLocal - 1)
             setScoreUpDown(scoreUpDown - 1)
         }
-    }, [])
+    }, [scoreLocal, scoreUpDown])
 
     return (
         <div>
-            <div className={styles.questionBlock} style={is_answered ? isAnswered : isNotAnswered} >
-                <div ref={ref} onClick={openCloseDropDown} className={styles.items}>
-                    {truncate(title, 90)}
+            <div className={'questionBlock'} style={is_answered ? isAnswered : isNotAnswered} >
+                <div ref={ref} onClick={openCloseDropDown} className={'items'}>
+                    {truncate(title, 82)}
                     <span>
                         {scoreLocal}
                     </span>
                 </div>
-                <span className={styles.scoreButton}>
+                <span className={'scoreButton'}>
                     <i
                         onClick={onClickUpHandler}
                         className="fa fa-arrow-up"
@@ -86,7 +86,7 @@ export const Question: React.FC<PropsType> = React.memo(({ question }) => {
                 </span>
             </div>
             {
-                dropDown && <div className={styles.dropDownBlock}>
+                dropDown && <div className={'dropDownBlock'}>
                     <div> Название вопроса: <b> {title} </b></div>
                     <div> Имя создателя вопроса: <b> {owner.display_name} </b></div>
                     <div> Рейтинг создателя вопроса: <b> {owner.reputation} </b></div>

@@ -1,5 +1,5 @@
 import React, { ChangeEvent, KeyboardEvent, useCallback, useState } from 'react'
-import styles from './Header.module.css'
+import './Header.scss'
 
 type PropsType = {
     title: string
@@ -51,27 +51,27 @@ export const Header: React.FC<PropsType> = React.memo((
 
 
     return (
-        <span className={styles.titleBlock}>
+        <span className={'titleBlock'}>
             <b>{currentPage * pageSize}</b> самых популярных вопросов на  Stackoverflow, содержащих "{title}"
             в наименовании, начиная  с
             <input
-                className={styles.dateInput}
+                className={'dateInput'}
                 type="date"
                 value={dateValue}
                 onChange={dateChangeHandler}
                 onKeyPress={onKeyPressHandler}
             />
-            <div className={styles.LowerLevel} >
+            <div className={'LowerLevel'} >
                 <input
                     placeholder='new title...'
-                    className={styles.searchInput}
+                    className={'searchInput'}
                     value={searchValue}
                     onChange={searchValueChangeHandler}
                     onKeyPress={onKeyPressHandler}
                 />
                 {
                     openCLoseButton && <button
-                        className={styles.buttonSearch}
+                        className={'buttonSearch'}
                         onClick={onCLickHandler}
                     >
                         поиск

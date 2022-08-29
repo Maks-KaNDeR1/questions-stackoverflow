@@ -27,7 +27,7 @@ export const getQuestions = async (
         dispatch(setDate(fromdate))
     }
     catch (err: any) {
-        dispatch(errorMessage(err.response.data.error_message))
+        dispatch(errorMessage(err.response.data.error_name))
         dispatch(errorCode(err.response.data.error_id))
     }
     finally {

@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react'
-import { DragDropContext, Draggable, Droppable, DropResult } from "react-beautiful-dnd"
+import { DragDropContext, Draggable, Droppable, DropResult } from "@hello-pangea/dnd"
 import { QuestionType } from '../../api/types'
 import { Question } from '../Question/Question'
 
@@ -59,8 +59,6 @@ const getItemStyle = (isDragging: boolean, draggableStyle: any) => ({
     padding: 5,
     background: isDragging ? "#6ab1d7" : "white",
     borderRadius: '10px',
-    backgroundPosition: '100% 0',
-    backgroundSize: '200% auto',
 
     ...draggableStyle
 })
